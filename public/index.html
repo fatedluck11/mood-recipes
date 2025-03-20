@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Recipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 text-indigo-600">Mood Recipe Finder</h1>
+        
+        <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-xl mb-4 text-gray-700">How are you feeling today?</h2>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button onclick="getRecipe('happy')" class="mood-btn bg-yellow-400 hover:bg-yellow-500">Happy 😊</button>
+                <button onclick="getRecipe('sad')" class="mood-btn bg-blue-400 hover:bg-blue-500">Sad 😢</button>
+                <button onclick="getRecipe('excited')" class="mood-btn bg-red-400 hover:bg-red-500">Excited 🎉</button>
+                <button onclick="getRecipe('stressed')" class="mood-btn bg-purple-400 hover:bg-purple-500">Stressed 😰</button>
+            </div>
+
+            <div id="recipe-container" class="hidden">
+                <div class="border-t pt-4">
+                    <h3 id="recipe-name" class="text-2xl font-bold mb-4 text-gray-800"></h3>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-700">Ingredients:</h4>
+                        <p id="recipe-ingredients" class="text-gray-600 whitespace-pre-line"></p>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="font-semibold text-gray-700">Instructions:</h4>
+                        <p id="recipe-instructions" class="text-gray-600 whitespace-pre-line"></p>
+                    </div>
+                    <button onclick="getRecipe(currentMood)" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full transition duration-200">
+                        Get Another Recipe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
